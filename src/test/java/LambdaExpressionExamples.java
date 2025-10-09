@@ -11,6 +11,7 @@ public class LambdaExpressionExamples {
 		Bird obj1 = new Eagle();
 		obj1.canFly("eagle");
 		
+		//Anonymous class implementing interface
 		Bird obj2 = new Bird() {
 			public void canFly(String val) {
 				System.out.println("Eagle bird implementation-2");
@@ -18,6 +19,7 @@ public class LambdaExpressionExamples {
 		};
 		obj2.canFly("eagle2");
 		
+		//Lambda expression implementing interface
 		Bird obj3 = (String value) -> System.out.println("Eagle bird implementation-3");
 		obj3.canFly("eagle3");
 		
@@ -28,6 +30,7 @@ public class LambdaExpressionExamples {
 		};
 		obj4.accept(11);
 		
+		//Types of Functional Interface
 		Supplier<String> obj5 = () -> "hello";
 		System.out.println(obj5.get());
 		
@@ -43,11 +46,13 @@ public class LambdaExpressionExamples {
 
 }
 
-
+@FunctionalInterface
 interface Bird{
 	void canFly(String val);
 }
 
+
+//Class implements interface
 class Eagle implements Bird{
 
 	public void canFly(String val) {
